@@ -56,16 +56,15 @@ with open('Day5/input.txt') as input_data:
      # Follow instrcution to move crates across stacks
     for instruction in instructions:
         quanity, source, dest = re.findall(r'[0-9][0-9]*', instruction)
-        move = stacks_dict[source][:int(quanity)]
-        for x in move:
-            stacks_dict[source].remove(x)
-        stacks_dict[dest] = move + stacks_dict[dest]
+        for i in range(int(quanity)):
+            move = stacks_dict[source].pop(0)
+            stacks_dict[dest].insert(0, move)
                    
     
         # Concatente first element of list to find answer
 answer = ''
 for stack in stacks_dict.values():
     answer += stack[0]
-    
+
 print(answer)
 
