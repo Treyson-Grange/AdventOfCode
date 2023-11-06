@@ -1,4 +1,6 @@
 # AdventOfCode2022
-Place I got in tournament: 
-Total Stars (leaderboard)
-Total Start (2 a day out of 50):
+## Place I got in tournament: 4
+## Total Stars (leaderboard)354
+This was a USU Discord tournament of 21 USU Students/Alumn.
+
+
