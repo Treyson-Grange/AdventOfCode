@@ -1,6 +1,4 @@
-# AdventOfCode2022
-## Place I got in tournament: 4
-## Total Stars (leaderboard)354
-This was a USU Discord tournament of 21 USU Students/Alumn.
-
-
+# Advent Of Code
+## All years I have competed in are here. 
+Note that Any years before 2022 I did on my own time throughout the year. Why? Cuz it's fun
+https://adventofcode.com/
