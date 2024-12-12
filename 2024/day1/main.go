@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math"
-	"strconv"
 	"strings"
 
 	"aoc2024/utils"
@@ -16,9 +15,9 @@ func main() {
 		return
 	}
 
-	part1(lines)
+	utils.TimeFunction(func() { part1(lines) })
 
-	part2(lines)
+	utils.TimeFunction(func() { part2(lines) })
 }
 
 func part1(lines []string) {
@@ -27,16 +26,10 @@ func part1(lines []string) {
 
 	for _, line := range lines {
 		parts := strings.Split(line, "   ")
-		left, err := strconv.Atoi(parts[0])
-		if err != nil {
-			fmt.Println("Error parsing left entry:", err)
-			return
-		}
-		right, err := strconv.Atoi(parts[1])
-		if err != nil {
-			fmt.Println("Error parsing right entry:", err)
-			return
-		}
+
+		left := utils.StringToInt(parts[0])
+		right := utils.StringToInt(parts[1])
+		
 		leftEntries = append(leftEntries, left)
 		rightEntries = append(rightEntries, right)
 	}
@@ -61,11 +54,7 @@ func part2(lines []string) {
 
 	for _, line := range lines {
 		parts := strings.Split(line, "   ")
-		right, err := strconv.Atoi(parts[1])
-		if err != nil {
-			fmt.Println("Error parsing right entry:", err)
-			return
-		}
+		right:= utils.StringToInt(parts[1])
 		rightList[right]++
 	}
 
@@ -75,11 +64,7 @@ func part2(lines []string) {
 
 	for _, line := range lines {
 		parts := strings.Split(line, "   ")
-		left, err := strconv.Atoi(parts[0])
-		if err != nil {
-			fmt.Println("Error parsing left entry:", err)
-			return
-		}
+		left := utils.StringToInt(parts[0])
 		if count, ok := rightList[left]; ok {
 			// We multiply the number of times the number appears in the right list by the number.
 			// We add this to a total sum

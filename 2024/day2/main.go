@@ -3,7 +3,6 @@ package main
 import (
 	"aoc2024/utils"
 	"fmt"
-	"strconv"
 	"strings"
 )
 
@@ -30,11 +29,7 @@ func main() {
 		// Check if the levels are safe
         intLevels := make([]int, len(levels))
         for i, level := range levels {
-            num, err := strconv.Atoi(level)
-            if err != nil {
-                fmt.Println("Error converting level to integer:", err)
-                return
-            }
+            num := utils.StringToInt(level)
             intLevels[i] = num
         }
         if isSafe(intLevels) {
@@ -83,10 +78,7 @@ func isSafe2(levels []string) bool {
     // Convert levels from string to integers
     intLevels := make([]int, len(levels))
     for i, level := range levels {
-        num, err := strconv.Atoi(level)
-        if err != nil {
-            return false // If conversion fails, the report isn't safe
-        }
+        num := utils.StringToInt(level)
         intLevels[i] = num
     }
 
